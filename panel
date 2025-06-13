@@ -49,7 +49,7 @@ services:
     restart: always
 
   panel:
-    image: ghcr.io/jexactyl/panel:latest
+    image: iadcallahan/jexactyl:latest
     restart: always
     ports:
       - "80:80"
@@ -66,7 +66,6 @@ services:
       <<: [*panel-environment, *mail-environment]
       DB_PASSWORD: *db-password
       APP_ENV: "production"
-      APP_ENVIRONMENT_ONLY: "false"
       CACHE_DRIVER: "redis"
       SESSION_DRIVER: "redis"
       QUEUE_DRIVER: "redis"
